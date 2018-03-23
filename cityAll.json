@@ -1,0 +1,1309 @@
+{
+
+	"product_id": "H",
+
+	"city_list": [
+
+		{
+
+			"AREA_SORT_NUM": "1",
+
+			"AREA_SORT_KNAME": "일본",
+
+			"MAJOR_CITY_DATA": [
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "TYO",
+
+					"CITY_KNAME": "도쿄"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "OSA",
+
+					"CITY_KNAME": "오사카"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "FUK",
+
+					"CITY_KNAME": "후쿠오카"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "OKA",
+
+					"CITY_KNAME": "오키나와"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "SPK",
+
+					"CITY_KNAME": "삿포로"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "UKY",
+
+					"CITY_KNAME": "교토"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "NGO",
+
+					"CITY_KNAME": "나고야"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "AQ4",
+
+					"CITY_KNAME": "유후인"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "HKO",
+
+					"CITY_KNAME": "하코네"
+
+				},
+
+				{
+
+					"AREA_CODE": "AJ",
+
+					"AREA_KNAME": "일본",
+
+					"COUNTRY_CODE": "JP",
+
+					"COUNTRY_KNAME": "일본",
+
+					"CITY_CODE": "993",
+
+					"CITY_KNAME": "노보리벳츠"
+
+				}
+
+			]
+
+		},
+
+		{
+
+			"AREA_SORT_NUM": "2",
+
+			"AREA_SORT_KNAME": "중국",
+
+			"MAJOR_CITY_DATA": [
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "HK",
+
+					"COUNTRY_KNAME": "홍콩",
+
+					"CITY_CODE": "HKG",
+
+					"CITY_KNAME": "홍콩"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "MO",
+
+					"COUNTRY_KNAME": "마카오",
+
+					"CITY_CODE": "MFM",
+
+					"CITY_KNAME": "마카오"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "SHA",
+
+					"CITY_KNAME": "상해"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "BJS",
+
+					"CITY_KNAME": "북경"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "TAO",
+
+					"CITY_KNAME": "청도"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "CAN",
+
+					"CITY_KNAME": "광저우"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "DLC",
+
+					"CITY_KNAME": "대련"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "SZX",
+
+					"CITY_KNAME": "심천"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "SIA",
+
+					"CITY_KNAME": "서안"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "WEH",
+
+					"CITY_KNAME": "위해"
+
+				},
+
+				{
+
+					"AREA_CODE": "AH",
+
+					"AREA_KNAME": "중국",
+
+					"COUNTRY_CODE": "CN",
+
+					"COUNTRY_KNAME": "중국",
+
+					"CITY_CODE": "SYX",
+
+					"CITY_KNAME": "삼아"
+
+				},
+
+				{
+
+					"AREA_CODE": "AC",
+
+					"AREA_KNAME": "중앙아시아",
+
+					"COUNTRY_CODE": "MN",
+
+					"COUNTRY_KNAME": "몽골",
+
+					"CITY_CODE": "ULN",
+
+					"CITY_KNAME": "울란바타르"
+
+				}
+
+			]
+
+		},
+
+		{
+
+			"AREA_SORT_NUM": "3",
+
+			"AREA_SORT_KNAME": "동남아",
+
+			"MAJOR_CITY_DATA": [
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "SG",
+
+					"COUNTRY_KNAME": "싱가포르",
+
+					"CITY_CODE": "SIN",
+
+					"CITY_KNAME": "싱가포르"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "TH",
+
+					"COUNTRY_KNAME": "태국",
+
+					"CITY_CODE": "BKK",
+
+					"CITY_KNAME": "방콕"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "PH",
+
+					"COUNTRY_KNAME": "필리핀",
+
+					"CITY_CODE": "MNL",
+
+					"CITY_KNAME": "마닐라"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "TW",
+
+					"COUNTRY_KNAME": "대만",
+
+					"CITY_CODE": "TPE",
+
+					"CITY_KNAME": "타이페이"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "VN",
+
+					"COUNTRY_KNAME": "베트남",
+
+					"CITY_CODE": "HAN",
+
+					"CITY_KNAME": "하노이"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "TH",
+
+					"COUNTRY_KNAME": "태국",
+
+					"CITY_CODE": "HKT",
+
+					"CITY_KNAME": "푸껫"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "TH",
+
+					"COUNTRY_KNAME": "태국",
+
+					"CITY_CODE": "PYX",
+
+					"CITY_KNAME": "파타야"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "ID",
+
+					"COUNTRY_KNAME": "인도네시아",
+
+					"CITY_CODE": "DPS",
+
+					"CITY_KNAME": "발리"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "PH",
+
+					"COUNTRY_KNAME": "필리핀",
+
+					"CITY_CODE": "CEB",
+
+					"CITY_KNAME": "세부"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "VN",
+
+					"COUNTRY_KNAME": "베트남",
+
+					"CITY_CODE": "DAD",
+
+					"CITY_KNAME": "다낭"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "PH",
+
+					"COUNTRY_KNAME": "필리핀",
+
+					"CITY_CODE": "KLO",
+
+					"CITY_KNAME": "보라카이"
+
+				},
+
+				{
+
+					"AREA_CODE": "AE",
+
+					"AREA_KNAME": "동남아시아",
+
+					"COUNTRY_CODE": "MY",
+
+					"COUNTRY_KNAME": "말레이지아",
+
+					"CITY_CODE": "BKI",
+
+					"CITY_KNAME": "코타 키나발루"
+
+				}
+
+			]
+
+		},
+
+		{
+
+			"AREA_SORT_NUM": "4",
+
+			"AREA_SORT_KNAME": "미주",
+
+			"MAJOR_CITY_DATA": [
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "NYC",
+
+					"CITY_KNAME": "뉴욕"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "LAX",
+
+					"CITY_KNAME": "로스 엔젤레스 (CA)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "LAS",
+
+					"CITY_KNAME": "라스베이거스 (NV)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "SFO",
+
+					"CITY_KNAME": "샌프란시스코"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "SEA",
+
+					"CITY_KNAME": "시애틀 (WA)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "CHI",
+
+					"CITY_KNAME": "시카고 (IL)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "WAS",
+
+					"CITY_KNAME": "워싱턴 (DC)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "HNL",
+
+					"CITY_KNAME": "호놀룰루 (HI)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HU",
+
+					"AREA_KNAME": "미국",
+
+					"COUNTRY_CODE": "US",
+
+					"COUNTRY_KNAME": "미국",
+
+					"CITY_CODE": "OGG",
+
+					"CITY_KNAME": "마우이섬 (HI)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HC",
+
+					"AREA_KNAME": "캐나다",
+
+					"COUNTRY_CODE": "CA",
+
+					"COUNTRY_KNAME": "캐나다",
+
+					"CITY_CODE": "YVR",
+
+					"CITY_KNAME": "밴쿠버"
+
+				},
+
+				{
+
+					"AREA_CODE": "HC",
+
+					"AREA_KNAME": "캐나다",
+
+					"COUNTRY_CODE": "CA",
+
+					"COUNTRY_KNAME": "캐나다",
+
+					"CITY_CODE": "YTO",
+
+					"CITY_KNAME": "토론토 (ON)"
+
+				},
+
+				{
+
+					"AREA_CODE": "HM",
+
+					"AREA_KNAME": "멕시코",
+
+					"COUNTRY_CODE": "MX",
+
+					"COUNTRY_KNAME": "멕시코",
+
+					"CITY_CODE": "CUN",
+
+					"CITY_KNAME": "칸쿤"
+
+				}
+
+			]
+
+		},
+
+		{
+
+			"AREA_SORT_NUM": "5",
+
+			"AREA_SORT_KNAME": "유럽",
+
+			"MAJOR_CITY_DATA": [
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "FR",
+
+					"COUNTRY_KNAME": "프랑스",
+
+					"CITY_CODE": "PAR",
+
+					"CITY_KNAME": "파리"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "GB",
+
+					"COUNTRY_KNAME": "영국",
+
+					"CITY_CODE": "LON",
+
+					"CITY_KNAME": "런던"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "IT",
+
+					"COUNTRY_KNAME": "이탈리아",
+
+					"CITY_CODE": "ROM",
+
+					"CITY_KNAME": "로마"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "IT",
+
+					"COUNTRY_KNAME": "이탈리아",
+
+					"CITY_CODE": "MIL",
+
+					"CITY_KNAME": "밀라노"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "IT",
+
+					"COUNTRY_KNAME": "이탈리아",
+
+					"CITY_CODE": "VCE",
+
+					"CITY_KNAME": "베니스"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "DE",
+
+					"COUNTRY_KNAME": "독일",
+
+					"CITY_CODE": "FRA",
+
+					"CITY_KNAME": "프랑크푸르트"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "DE",
+
+					"COUNTRY_KNAME": "독일",
+
+					"CITY_CODE": "MUC",
+
+					"CITY_KNAME": "뮌헨"
+
+				},
+
+				{
+
+					"AREA_CODE": "EE",
+
+					"AREA_KNAME": "동유럽",
+
+					"COUNTRY_CODE": "AT",
+
+					"COUNTRY_KNAME": "오스트리아",
+
+					"CITY_CODE": "VIE",
+
+					"CITY_KNAME": "비엔나"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "ES",
+
+					"COUNTRY_KNAME": "스페인",
+
+					"CITY_CODE": "BCN",
+
+					"CITY_KNAME": "바르셀로나"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "ES",
+
+					"COUNTRY_KNAME": "스페인",
+
+					"CITY_CODE": "MAD",
+
+					"CITY_KNAME": "마드리드"
+
+				},
+
+				{
+
+					"AREA_CODE": "EE",
+
+					"AREA_KNAME": "동유럽",
+
+					"COUNTRY_CODE": "CZ",
+
+					"COUNTRY_KNAME": "체코 공화국",
+
+					"CITY_CODE": "PRG",
+
+					"CITY_KNAME": "프라하"
+
+				},
+
+				{
+
+					"AREA_CODE": "EW",
+
+					"AREA_KNAME": "서유럽",
+
+					"COUNTRY_CODE": "CH",
+
+					"COUNTRY_KNAME": "스위스",
+
+					"CITY_CODE": "ZIN",
+
+					"CITY_KNAME": "인터라켄"
+
+				}
+
+			]
+
+		},
+
+		{
+
+			"AREA_SORT_NUM": "6",
+
+			"AREA_SORT_KNAME": "남태평양",
+
+			"MAJOR_CITY_DATA": [
+
+				{
+
+					"AREA_CODE": "PG",
+
+					"AREA_KNAME": "괌",
+
+					"COUNTRY_CODE": "GU",
+
+					"COUNTRY_KNAME": "괌",
+
+					"CITY_CODE": "GUM",
+
+					"CITY_KNAME": "아가나"
+
+				},
+
+				{
+
+					"AREA_CODE": "PS",
+
+					"AREA_KNAME": "사이판",
+
+					"COUNTRY_CODE": "MP",
+
+					"COUNTRY_KNAME": "북 마리아나 제도",
+
+					"CITY_CODE": "SPN",
+
+					"CITY_KNAME": "사이판"
+
+				},
+
+				{
+
+					"AREA_CODE": "PA",
+
+					"AREA_KNAME": "호주",
+
+					"COUNTRY_CODE": "AU",
+
+					"COUNTRY_KNAME": "호주",
+
+					"CITY_CODE": "SYD",
+
+					"CITY_KNAME": "시드니"
+
+				},
+
+				{
+
+					"AREA_CODE": "PA",
+
+					"AREA_KNAME": "호주",
+
+					"COUNTRY_CODE": "AU",
+
+					"COUNTRY_KNAME": "호주",
+
+					"CITY_CODE": "MEL",
+
+					"CITY_KNAME": "멜버른"
+
+				},
+
+				{
+
+					"AREA_CODE": "PA",
+
+					"AREA_KNAME": "호주",
+
+					"COUNTRY_CODE": "AU",
+
+					"COUNTRY_KNAME": "호주",
+
+					"CITY_CODE": "BNE",
+
+					"CITY_KNAME": "브리즈번"
+
+				},
+
+				{
+
+					"AREA_CODE": "PA",
+
+					"AREA_KNAME": "호주",
+
+					"COUNTRY_CODE": "AU",
+
+					"COUNTRY_KNAME": "호주",
+
+					"CITY_CODE": "CNS",
+
+					"CITY_KNAME": "케언즈"
+
+				},
+
+				{
+
+					"AREA_CODE": "PA",
+
+					"AREA_KNAME": "호주",
+
+					"COUNTRY_CODE": "AU",
+
+					"COUNTRY_KNAME": "호주",
+
+					"CITY_CODE": "OOL",
+
+					"CITY_KNAME": "골드코스트"
+
+				},
+
+				{
+
+					"AREA_CODE": "PP",
+
+					"AREA_KNAME": "남태평양",
+
+					"COUNTRY_CODE": "PW",
+
+					"COUNTRY_KNAME": "팔라우",
+
+					"CITY_CODE": "ROR",
+
+					"CITY_KNAME": "코롤(팔라우)"
+
+				},
+
+				{
+
+					"AREA_CODE": "PF",
+
+					"AREA_KNAME": "피지",
+
+					"COUNTRY_CODE": "FJ",
+
+					"COUNTRY_KNAME": "피지",
+
+					"CITY_CODE": "NAN",
+
+					"CITY_KNAME": "난디"
+
+				},
+
+				{
+
+					"AREA_CODE": "PN",
+
+					"AREA_KNAME": "뉴질랜드",
+
+					"COUNTRY_CODE": "NZ",
+
+					"COUNTRY_KNAME": "뉴질랜드",
+
+					"CITY_CODE": "AKL",
+
+					"CITY_KNAME": "오클랜드"
+
+				},
+
+				{
+
+					"AREA_CODE": "PP",
+
+					"AREA_KNAME": "남태평양",
+
+					"COUNTRY_CODE": "NC",
+
+					"COUNTRY_KNAME": "뉴 칼레도니아",
+
+					"CITY_CODE": "NOU",
+
+					"CITY_KNAME": "누메아"
+
+				}
+
+			]
+
+		},
+
+		{
+
+			"AREA_SORT_NUM": "7",
+
+			"AREA_SORT_KNAME": "아프리카",
+
+			"MAJOR_CITY_DATA": [
+
+				{
+
+					"AREA_CODE": "FC",
+
+					"AREA_KNAME": "아프리카",
+
+					"COUNTRY_CODE": "ZA",
+
+					"COUNTRY_KNAME": "남아프리카 공화국",
+
+					"CITY_CODE": "DUR",
+
+					"CITY_KNAME": "더반"
+
+				},
+
+				{
+
+					"AREA_CODE": "FC",
+
+					"AREA_KNAME": "아프리카",
+
+					"COUNTRY_CODE": "ZA",
+
+					"COUNTRY_KNAME": "남아프리카 공화국",
+
+					"CITY_CODE": "JNB",
+
+					"CITY_KNAME": "요하네스버그"
+
+				},
+
+				{
+
+					"AREA_CODE": "FC",
+
+					"AREA_KNAME": "아프리카",
+
+					"COUNTRY_CODE": "ZA",
+
+					"COUNTRY_KNAME": "남아프리카 공화국",
+
+					"CITY_CODE": "CPT",
+
+					"CITY_KNAME": "케이프타운"
+
+				},
+
+				{
+
+					"AREA_CODE": "FC",
+
+					"AREA_KNAME": "아프리카",
+
+					"COUNTRY_CODE": "KE",
+
+					"COUNTRY_KNAME": "케냐",
+
+					"CITY_CODE": "NBO",
+
+					"CITY_KNAME": "나이로비"
+
+				},
+
+				{
+
+					"AREA_CODE": "EM",
+
+					"AREA_KNAME": "지중해",
+
+					"COUNTRY_CODE": "MT",
+
+					"COUNTRY_KNAME": "몰타",
+
+					"CITY_CODE": "MLA",
+
+					"CITY_KNAME": "발레타"
+
+				},
+
+				{
+
+					"AREA_CODE": "FC",
+
+					"AREA_KNAME": "아프리카",
+
+					"COUNTRY_CODE": "MU",
+
+					"COUNTRY_KNAME": "모리셔스 공화국",
+
+					"CITY_CODE": "MRU",
+
+					"CITY_KNAME": "포트루이스"
+
+				},
+
+				{
+
+					"AREA_CODE": "FC",
+
+					"AREA_KNAME": "아프리카",
+
+					"COUNTRY_CODE": "GH",
+
+					"COUNTRY_KNAME": "가나",
+
+					"CITY_CODE": "ACC",
+
+					"CITY_KNAME": "아크라"
+
+				}
+
+			]
+
+		}
+
+	]
+
+}

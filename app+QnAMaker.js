@@ -7,7 +7,7 @@ var peopleNumCard = require('./adaptiveCard/peopleNumCard_v2.js').card
 var checkinCard = require('./adaptiveCard/checkinCard.js').card
 var cityCard = require('./adaptiveCard/city2.js').card
 
-//npm install -g botbuilder-cognitiveservices
+//설치 필요 npm install -g botbuilder-cognitiveservices --추가
 var cognitiveservices = require('./node_modules/botbuilder-cognitiveservices');
 
 
@@ -34,29 +34,71 @@ var tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azu
 
 var bot = new builder.UniversalBot(connector, [
   function (session) {
-    session.send('안녕하세요 만나서 반갑습니다!KBCard 챗봇 입니다.')
- 
+    session.send('안녕하세요 만나서 반갑습니다!')
+    session.beginDialog('askCityInfo')
   },
   function (session, results) {
-  
-  },
-  
-  function (session, results) {
-   
+    console.log('console 도시 선택=' + `${results.response}`)
 
+    session.conversationData.CITYCODE = results.response
+    // session.send('session 정보= ' + session.conversationData.CITYCODE)
+
+    session.beginDialog('askBeginDate')
+  },
+  function (session, results) {
+    // 체크인  저장
+    session.conversationData.CHECKIN = results.response
+    // 체크아웃 일자 저장
+    session.conversationData.CHECKOUT = results.response2
+
+    // 출력
+    // session.send('session 정보= ' + JSON.stringify(session.conversationData))
+
+   // session.send(`체크인:${session.conversationData.CHECKIN} / 체크아웃: ${session.conversationData.CHECKOUT}`)
+    // builder.Prompts.text(session, `체크인 및 체크아웃 일정은 ${results.response}과 같습니다.`)
+    builder.Prompts.choice(session, '예약 일정이 맞습니까? ', '예|아니오', { listStyle: builder.ListStyle.button })
+  },
+  function (session, results) {
+    if (results.response.entity === '예') {
+      session.beginDialog('askForPeopleNumber')
+    } else {
+      session.replaceDialog('askBeginDate', { reprompt: true })
+    }
+  },
+  function (session) {
+    // var result = results.response
+    if (session.conversationData.CHILD1_OPTION === undefined) {
+      session.conversationData.CHILD1_OPTION = '선택안함'
+    } if (session.conversationData.CHILD2_OPTION === undefined) {
+      session.conversationData.CHILD2_OPTION = '선택안함'
+    }
+    session.send(`${session.conversationData.ADULT_OPTION}, 아이1:${session.conversationData.CHILD1_OPTION}, 아이2:${session.conversationData.CHILD2_OPTION}`)
+    builder.Prompts.choice(session, '추가로 방을 예약하시겠습니까? ', '예|아니오', { listStyle: builder.ListStyle.button })
   },
   function (session, results, next) {
-   
+    if (results.response.entity === '예') {
+      // session.beginDialog('askForPeopleNumber')
+      session.replaceDialog('askForPeopleNumber', { reprompt: true })
+    }
+
+    let countryCondition = '출발도시:' + session.conversationData.CITYCODE + '\n'
+    let dateCondition = '체크인:' + session.conversationData.CHECKIN + '체크아웃:' + session.conversationData.CHECKOUT + '\n'
+    let peopleCondition = session.conversationData.ADULT_OPTION + '아이1:' + session.conversationData.CHILD1_OPTION + '아이2:' + session.conversationData.CHILD2_OPTION
+    let searchCondition = countryCondition.concat(dateCondition, peopleCondition)
+
+    session.send(searchCondition)
+    session.save()
+    session.conversationData = {}
   }
 ]).set('storage', tableStorage) // Register in-memory storage
 
 
 //=========================================================
-// Bots Dialogs QnAMakerRecognizer
+// Bots Dialogs QnAMakerRecognizer start --추가 
 //=========================================================
 
 var qnAMakerRecognizer = new cognitiveservices.QnAMakerRecognizer({
-  knowledgeBaseId: '9d231467-ae1a-4919-a845-245d84784813',
+  knowledgeBaseId: '5aa5a440-5939-411d-8279-3eb92e2d7253',
   subscriptionKey: 'cc2c5764d57b4feaafa0480d0c355653',
   top: 4
 });
@@ -74,7 +116,7 @@ var basicQnAMakerDialog = new cognitiveservices.QnAMakerDialog({
 // Override to also include the knowledgebase question with the answer on confident matches
 basicQnAMakerDialog.respondFromQnAMakerResult = function (session, qnaMakerResult) {
   var result = qnaMakerResult;
-  var response = 'FAQ 질문 입니다.From KBCard:  \r\n  Q: ' + result.answers[0].questions[0] + '  \r\n A: ' + result.answers[0].answer;
+  var response = 'FAQ 질문 입니다.:  \r\n  Q: ' + result.answers[0].questions[0] + '  \r\n A: ' + result.answers[0].answer;
   session.send(response);
 }
 
@@ -88,6 +130,11 @@ basicQnAMakerDialog.defaultWaitNextMessage = function (session, qnaMakerResult) 
   }
   session.endDialog();
 }
+
+//=========================================================
+// Bots Dialogs QnAMakerRecognizer end
+//=========================================================
+
 
 
 bot.on('conversationUpdate', function (message) {
@@ -112,9 +159,9 @@ bot.dialog('askCityInfo', [
   function (session) {
     var msg = new builder.Message(session).addAttachment(cityCard)
     session.send(msg)
-    builder.Prompts.text(session, '원하는 도시를 선택하시기 바랍니다!')
+    builder.Prompts.text(session, '원하는 내용을 선택하시기 바랍니다!')
   }, function (session, results) {
-    console.log("results="+results)
+    console.log(results)
     session.endDialogWithResult({response: results.response})
   }
 ])
@@ -142,33 +189,26 @@ bot.dialog('askForPeopleNumber', [
 ])
 
 bot.dialog('askBeginDate', [
- 
-  function (session) {   
-    session.send("askBeginDate in")
+  function (session) {
+    if (session.message && session.message.value) {
+      // 사용자가 선택한 값 출력
+      console.log(session.message.value)
+      var checkinDate = session.message.value.checkinDate
+      var checkoutDate = session.message.value.checkoutDate
+
+      session.endDialogWithResult({ response: checkinDate, response2: checkoutDate })
+      return
+    }
+
     var msg = new builder.Message(session).addAttachment(checkinCard)
     session.send(msg)
-    builder.Prompts.text(session, '원하는 일자를 선택하시기 바랍니다!')
-  }, function (session, results) {
-
-    console.log('console 일자=' + `${results.response}`)
-   // console.log(results)
- //   var checkinDate = session.message.value.checkinDate
- //   var checkoutDate = session.message.value.checkoutDate
-   // console.log(results.response);
-    //session.endDialogWithResult({})
-  //  session.endDialog(`Hello ${results.response}!`);
- // console.log("results="+results)
-    session.endDialogWithResult(results)
-    
   }
-
-
 ])
 
 // Search.All
 // 베트남 호텔에 금연룸으로 검색해줘
 bot.dialog('LUIS_searchAll', [
-  function (session, args,next) {
+  function (session, args) {
     var countryEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Country')
     var checkinEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Checkin.Date')
     var checkoutEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'Checkout.Date')
@@ -191,41 +231,48 @@ bot.dialog('LUIS_searchAll', [
       adultNumber = adultNumberEntity.entity.replace(/(\s*)/g, '')
       session.conversationData.ADULT_OPTION = adultNumber
     }
-  
-    session.send(`현재 상태는... ${country}, ${checkin},${checkout},${adultNumber}`)
-   // session.send('호텔 조회시 필수 정보들이 누락되어있습니다.')
-    //waterfall 방식으로 처리
-    next() 
 
-  },function(session,results, next){
+    if(country){
+      session.send('county 없음')
+    }else{
+      session.send('county 있음.')
+    }
 
-    //도시 코드 검색     
-     if (!session.conversationData.CITYCODE) {
-        session.send('도시가 선택 되지 않았습니다.')
-       return session.beginDialog('askCityInfo')
-     }
-     session.send('session.conversationData.CITYCODE='+session.conversationData.CITYCODE)
-     next()
-    }, function (session, results, next) {
+    session.send(`현재 상태는........ ${country}, ${checkin},${checkout},${adultNumber}`)
+    session.send('호텔 조회시 필수 정보들이 누락되어있습니다.')
 
-    //체크인 ,체크 아웃 검색    
+    if (!session.conversationData.CITYCODE) {
+      session.send('가시고 싶은 여행지를 선택해주세요')
+      return session.beginDialog('askCityInfo')
+    }
+
+    // if (!checkin || !checkout) {
+    //   return session.beginDialog('askBeginDate')
+    // }
+    // if (!adultNumberEntity) {
+    //   return session.beginDialog('askForPeopleNumber')
+    // }
+
+    // session.send('Search All Dialog 입니다')
+  }, function (session, results, next) {
+    // if (!session.conversationData.CITYCODE) {
+    //   return session.beginDialog('askCityInfo')
+    // }
+    session.send(results.response)
     if (!session.conversationData.CHECKIN || !session.conversationData.CHECKOUT) {
       session.send('체크인 및 체크아웃 날짜를 다시 입력해주세요')
       return session.beginDialog('askBeginDate')
     }
-    session.send("chekIn="+ession.conversationData.CHECKIN+",chekOut="+session.conversationData.CHECKOUT)
     next()
-
   }, function (session, results, next) {
-    //성인 구성 검색 
+    session.send(results.response)
     if (!session.conversationData.ADULT_OPTION) {
-      session.send('성인이 구성되지 않았습니다.')
       return session.beginDialog('askForPeopleNumber')
     }
-    session.send("ADULT_OPTION="+ession.conversationData.ADULT_OPTION)
-    next()   
-   
+    next()
   }, function (session, results) {
+    session.send(results.response)
+
      // 모든 조건을 만족한 경우
     let countryCondition = '출발도시:' + session.conversationData.CITYCODE + '\n'
     let dateCondition = '체크인:' + session.conversationData.CHECKIN + '체크아웃:' + session.conversationData.CHECKOUT + '\n'
@@ -241,6 +288,7 @@ bot.dialog('LUIS_searchAll', [
   
 })
 
+//추가 
 bot.dialog('FAQ',basicQnAMakerDialog)
 .triggerAction({
   matches: 'FAQ'

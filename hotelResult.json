@@ -1,0 +1,61 @@
+{  
+    "HANATOUR":{  
+       "HEADER":{  
+          "RESULT_TYPE":"S",
+          "RESULT_DATA_TOTAL":"5"
+       },
+       "RESULT":{  
+          "HOTEL_LIST":{  
+             "REAL_YN":"N",
+             "TOTAL_COUNT":"48",
+             "TOTAL_PAGE":"10",
+             "CUR_PAGE":"6",
+             "CURRENCY":"JPY",
+             "EXCHAGE_RATE":"10.34",
+             "AREA_DATA":{  
+                "AREA_CODE":"AJ",
+                "COUNTRY_CODE":"JP",
+                "CITY_CODE":"TYO"
+             },
+             "HOTEL_DATA":[  
+                {  
+                   "CODE":"H04141",
+                   "NAME":"SMILE HOTEL ASAKUSA (EX,SKY COURT ASAKUSA)",
+                   "K_NAME":"스마일 호텔 아사쿠사",
+                   "GRADE":"3",
+                   "LOCAL_PRICE":"5410",
+                   "CURR":"JPY",
+                   "SALE_AMOUNT":"55940",
+                   "RECOMM":"Y",
+                   "STATUS":"REQUEST",
+                   "IMG_NO":"356717",
+                   "LATITUDE":"35.718146",
+                   "LONGITUDE":"139.801662",
+                   "EVENT_YN":"Y",
+                   "WIFI_YN":"N",
+                   "REVIEW":"3.7",
+                   "LANDMARKS":""
+                },
+                {  
+                   "CODE":"H01188",
+                   "NAME":"NARITA GATEWAY HOTEL(EX. NARITA PORT HOTEL)",
+                   "K_NAME":"나리타 게이트웨이 호텔",
+                   "GRADE":"4",
+                   "LOCAL_PRICE":"5500",
+                   "CURR":"JPY",
+                   "SALE_AMOUNT":"56870",
+                   "RECOMM":"N",
+                   "STATUS":"AVAILABLE",
+                   "IMG_NO":"204195",
+                   "LATITUDE":"35.783298",
+                   "LONGITUDE":"140.316589",
+                   "EVENT_YN":"N",
+                   "WIFI_YN":"N",
+                   "REVIEW":"",
+                   "LANDMARKS":""
+                }
+             ]
+          }
+       }
+    }
+ }

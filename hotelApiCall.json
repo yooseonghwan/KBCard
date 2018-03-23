@@ -1,0 +1,23 @@
+{
+    "CITY_CODE": "OSA",
+    "CHECKIN": "20120701",
+    "CHECKOUT": "20120702",
+    "ROOM": [
+      {
+        "TYPE": "SG"
+      },
+      {
+        "TYPE": "TW",
+        "CHILD": [
+          {
+            "AGE": 5
+          },
+          {
+            "AGE": 12
+          }
+        ]
+      }
+    ],
+    "PAGE": "1",
+    "ORDERBY": "5"
+  }
