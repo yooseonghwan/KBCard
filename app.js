@@ -212,7 +212,7 @@ bot.dialog('survey', [
   },
   function (session, results) {
     session.conversationData.name = results.response;
-    builder.Prompts.choice(session, '반갑습니다. ' + results.response + '카드를 선택해주세요? ', ['신용카드', '체크카드']);
+    builder.Prompts.choice(session, '반갑습니다. ' + results.response + ' 님 카드를 선택해주세요? ', ['신용카드', '체크카드']);
   },
   function (session, results) {
     session.conversationData.cardtype = results.response.entity;
