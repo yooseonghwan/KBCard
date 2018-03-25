@@ -140,7 +140,7 @@ bot.dialog('FAQ', basicQnAMakerDialog);
 
 bot.dialog('FAQStart',[
   function (session, results) {
-  builder.Prompts.text(session, 'QNA 질문하세요?');
+  builder.Prompts.text(session, 'QNA 질문하세요? 예)온라인 체크카드 발급');
   
   
   },
