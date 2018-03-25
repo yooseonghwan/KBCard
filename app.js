@@ -6,6 +6,7 @@ var botbuilder_azure = require('botbuilder-azure')
 var peopleNumCard = require('./adaptiveCard/peopleNumCard_v2.js').card
 var checkinCard = require('./adaptiveCard/checkinCard.js').card
 var cityCard = require('./adaptiveCard/city2.js').card
+var apis = require('./apis.js')
 
 //npm install -g botbuilder-cognitiveservices
 var cognitiveservices = require('./node_modules/botbuilder-cognitiveservices');
@@ -35,6 +36,7 @@ var tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azu
 
 
 var bot = new builder.UniversalBot(connector, [
+
   function (session) {
     session.send('안녕하세요. KBCard 챗봇 입니다. ')
     //카드 종류 추천
@@ -45,24 +47,23 @@ var bot = new builder.UniversalBot(connector, [
   function (session, results) {
 
     session.userData.serviceType = results.response.entity;
+   // session.send('results.response.entity='+results.response.entity)
 
     if (results.response.entity == "카드 추천") {
       //카드 추천
+     // session.send('카드 추천 입니다. ')
       return session.beginDialog('survey')
 
     } if (results.response.entity == "FAQ") {
       // FAQ 
-
+     // session.send('FAQ 입니다. ')
       return session.beginDialog('FAQStart')
 
-    } else {
+    } 
 
-      return session.beginDialog('SearchCard')
-    }
+    return session.beginDialog('recommendation')
 
-
-
-    session.send('끝 ')
+    // session.send('끝 ')
   }
 ]).set('storage', tableStorage) // Register in-memory storage
 
@@ -71,6 +72,7 @@ const luis = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8e76b372
 var recognizer = new builder.LuisRecognizer(luis)
 bot.recognizer(recognizer)
 
+const luisurl = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8e76b372-816d-4fc1-9623-af5e2761d6c3?subscription-key=124e3635cf4847138695cca906b528f4&verbose=true&timezoneOffset=0&q=';
 
 //=========================================================
 // Bots Dialogs QnAMakerRecognizer
@@ -87,15 +89,15 @@ bot.library(qnaMakerTools.createLibrary());
 
 var basicQnAMakerDialog = new cognitiveservices.QnAMakerDialog({
   recognizers: [qnAMakerRecognizer],
-  defaultMessage: 'FAQ의 대답이 없습니다...자료가 부족합니다. ',
-  qnaThreshold: 0.3,
+  defaultMessage: 'QNA의 대답이 없습니다... ',
+  qnaThreshold: 0.1,
   feedbackLib: qnaMakerTools
 });
 
 // Override to also include the knowledgebase question with the answer on confident matches
 basicQnAMakerDialog.respondFromQnAMakerResult = function (session, qnaMakerResult) {
   var result = qnaMakerResult;
-  var response = 'FAQ 질문 입니다.From KBCard QnA:  \r\n  Q: ' + result.answers[0].questions[0] + '  \r\n A: ' + result.answers[0].answer;
+  var response = 'QNA 질문 입니다.From KBCard QnA:  \r\n  Q: ' + result.answers[0].questions[0] + '  \r\n A: ' + result.answers[0].answer;
   session.send(response);
 }
 
@@ -136,20 +138,69 @@ bot.dialog('FAQ', basicQnAMakerDialog);
 // bot.dialog('/', basicQnAMakerDialog);
 
 
-bot.dialog('FAQStart', [
-  function (session) {
-    builder.Prompts.text(session, '질문을 입력해주세요');
-
+bot.dialog('FAQStart',[
+  function (session, results) {
+  builder.Prompts.text(session, 'QNA 질문하세요?');
+  
+  
   },
   function (session, results) {
-    return session.beginDialog('FAQ')
+   
+    session.beginDialog('FAQ')
+  }
+]
+);
+
+
+bot.dialog('Recommend', [
+  function (session,args) {
+    //session.send('Recommend session');
+  //  session.send('args'+args.intent.entities);
+    var getage = builder.EntityRecognizer.findEntity(args.intent.entities, 'Age');
+    var getCheckCard  = builder.EntityRecognizer.findEntity(args.intent.entities, 'CheckCard');
+    var getCreditCard = builder.EntityRecognizer.findEntity(args.intent.entities, 'CreditCard');
+    
+    var age ='못찾음';
+    var cardtype ='못찾음';
+    //var creditCard ='못찾음';
+    
+    if (getage != null) {
+      age = getage.entity.replace(/(\s*)/g, '')
+      session.conversationData.age = age
+    }
+    if (getCheckCard != null) {
+      cardtype = getCheckCard.entity.replace(/(\s*)/g, '')
+      session.conversationData.cardtype = cardtype
+    }
+    if (getCreditCard != null) {
+      cardtype = getCreditCard.entity.replace(/(\s*)/g, '')
+      session.conversationData.cardtype = cardtype
+    }
+
+   // session.send(`현재 상태는... ${country}, ${checkin},${checkout},${adultNumber}`)
+   // session.send('자연어 처리 결과');
+   // session.send(`나이: ${age}`)
+   // session.send(`카드 종류: ${cardtype}`)
+
+    session.endDialog(
+      ' 카드 종류는 : ' + cardtype + '<br>' +
+      ' 나이는 : ' + session.userData.age + '<br>' +
+     // ' 혜택은 :  ' + session.userData.benefit + '<br>' +
+      ' 에 맞는 카드를 추천해 드리겠습니다.'
+    );
+    
+    
+  },
+  function (session, results) {
+  //  return session.beginDialog('FAQ')
+  builder.send('처리 로직은 개발 입사 후...');
 
 
   }
 ]).triggerAction({
   matches: 'Recommend',
   onInterrupted: function (session) {
-    session.send('Recommend 불가');
+    session.send('Recommend triggerAction');
   }
 });
 
@@ -183,23 +234,52 @@ bot.dialog('survey', [
   }
 ]);
 
-bot.dialog('SearchCard', [
 
+bot.dialog('recommendation', [
   function (session) {
-    session.send('추천 받을 카드는 어떤건가요?: \'%s\'', session.message.text);
-
-    // try extracting entities
-    var cityEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'builtin.geography.city');
-    var airportEntity = builder.EntityRecognizer.findEntity(args.intent.entities, 'AirportCode');
-
-  },
-  function (session, results) {
-
-
+    builder.Prompts.text(session, '자유롭게 말해주세요 <br>예) 20대 카드추천해주세요 ,  <br> 20대 체크카드추천해주세요')
+    // session.endDialog()
+  }, function (session, results) {
+    var query = results.response
+    apis
+      .luisApi(luisurl, query)
+      .then(function (value) { 
+       // session.send("value="+value);
+        session.send("score가 적거나 Intent 대응 프로세스가 없습니다")
+        handleApiResponse(session, value) })
+      .catch(function (error) { 
+        session.send("error="+error);
+        console.error(error) })
+    session.endDialog()
   }
-]).triggerAction({
-  matches: 'Recommend',
-  onInterrupted: function (session) {
-    session.send('Recommend 불가');
-  }
-});
+])
+
+function handleApiResponse (session, luisResult) {
+ // session.send("score가 적거나 Intent 대응 프로세스가 없습니다")
+  session.send("luis Result:"+luisResult)
+}
+
+
+// bot.dialog('SearchCardAI', [
+
+//   function (session) {
+//   //  session.send('추천 받을 카드는 어떤건가요?: \'%s\'', session.message.text);
+//     builder.Prompts.text(session, ' ai 질문을 입력해주세요');
+
+    
+//   },
+//   function (session, results,args) {
+//     session.send('args'+args);
+//     // try extracting entities
+//     var CheckCard  = builder.EntityRecognizer.findEntity(args.intent.entities, 'CheckCard ');
+   
+//     session.send('CheckCard');
+
+
+//   }
+// ]).triggerAction({
+//   matches: 'Recommend',
+//   onInterrupted: function (session) {
+//     session.send('Recommend 불가');
+//   }
+// });
