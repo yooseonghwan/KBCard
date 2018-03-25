@@ -183,8 +183,8 @@ bot.dialog('Recommend', [
    // session.send(`카드 종류: ${cardtype}`)
 
     session.endDialog(
-      ' 카드 종류는 : ' + cardtype + '<br>' +
-      ' 나이는 : ' + age + '<br>' +
+      ' 카드 종류는 : ' + cardtype + 
+      ' 나이는 : ' + age + 
      // ' 혜택은 :  ' + session.userData.benefit + '<br>' +
       ' 에 맞는 카드를 추천해 드리겠습니다.'
     );
@@ -211,24 +211,24 @@ bot.dialog('survey', [
     builder.Prompts.text(session, '안녕하세요 성함이 어떻게 되나요?');
   },
   function (session, results) {
-    session.userData.name = results.response;
+    session.conversationData.name = results.response;
     builder.Prompts.choice(session, '반갑습니다. ' + results.response + '카드를 선택해주세요? ', ['신용카드', '체크카드']);
   },
   function (session, results) {
-    session.userData.cardtype = results.response.entity;
+    session.conversationData.cardtype = results.response.entity;
     builder.Prompts.number(session, '당신의 나이는 어떻게 되시나요?');
   },
   function (session, results) {
-    session.userData.age = results.response;
+    session.conversationData.age = results.response;
     builder.Prompts.choice(session, '어떤 혜택이 있는 카드를 원하시나요?? ', ['종합', '외식', '주유', '교통', '실적']);
   },
 
   function (session, results) {
-    session.userData.benefit = results.response.entity;
-    session.endDialog('당신의 성함은 :  ' + session.userData.name + '<br>' +
-      ' 카드 선택한 카드 종류는 : ' + session.userData.cardtype + '<br>' +
-      ' 나이는 : ' + session.userData.age + '<br>' +
-      ' 혜택은 :  ' + session.userData.benefit + '<br>' +
+    session.conversationData.benefit = results.response.entity;
+    session.endDialog('당신의 성함은 :  ' + session.conversationData.name + 
+      ' 카드 선택한 카드 종류는 : ' + session.conversationData.cardtype + 
+      ' 나이는 : ' + session.conversationData.age + 
+      ' 혜택은 :  ' + session.conversationData.benefit + 
       ' 에 맞는 카드를 추천해 드리겠습니다.'
     );
   }
@@ -237,7 +237,7 @@ bot.dialog('survey', [
 
 bot.dialog('recommendation', [
   function (session) {
-    builder.Prompts.text(session, '자유롭게 말해주세요 <br>예) 20대 카드추천해주세요 ,  <br> 20대 체크카드추천해주세요')
+    builder.Prompts.text(session, '자유롭게 말해주세요 예) 20대 카드추천해주세요 ,   20대 체크카드추천해주세요')
     // session.endDialog()
   }, function (session, results) {
     var query = results.response
