@@ -184,7 +184,7 @@ bot.dialog('Recommend', [
 
     session.endDialog(
       ' 카드 종류는 : ' + cardtype + '<br>' +
-      ' 나이는 : ' + session.userData.age + '<br>' +
+      ' 나이는 : ' + age + '<br>' +
      // ' 혜택은 :  ' + session.userData.benefit + '<br>' +
       ' 에 맞는 카드를 추천해 드리겠습니다.'
     );
