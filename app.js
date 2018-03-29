@@ -28,7 +28,7 @@ var connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen())
 
 var tableName = 'botdata'
-// const connString = 'DefaultEndpointsProtocol=https;AccountName=hanatour9833;AccountKey=6jqh42QQjWWBwoPGGR/Jr0PZjhBMZVbHm/gkhEfHvOj8aV6+oI8ed6ZAAwB5m793WqyQDiduJJB0QpseJwqYxw==;EndpointSuffix=core.windows.net'
+
 var azureTableClient = new botbuilder_azure.AzureTableClient(tableName, process.env.AzureWebJobsStorage)
 var tableStorage = new botbuilder_azure.AzureBotStorage({ gzipData: false }, azureTableClient)
 
@@ -68,19 +68,18 @@ var bot = new builder.UniversalBot(connector, [
 ]).set('storage', tableStorage) // Register in-memory storage
 
 
-const luis = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8e76b372-816d-4fc1-9623-af5e2761d6c3?subscription-key=124e3635cf4847138695cca906b528f4&verbose=true&timezoneOffset=0&q=';
+const luis = ''
 var recognizer = new builder.LuisRecognizer(luis)
 bot.recognizer(recognizer)
 
-const luisurl = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/8e76b372-816d-4fc1-9623-af5e2761d6c3?subscription-key=124e3635cf4847138695cca906b528f4&verbose=true&timezoneOffset=0&q=';
-
+const luisurl = ''
 //=========================================================
 // Bots Dialogs QnAMakerRecognizer
 //=========================================================
 
 var qnAMakerRecognizer = new cognitiveservices.QnAMakerRecognizer({
-  knowledgeBaseId: '9d231467-ae1a-4919-a845-245d84784813',
-  subscriptionKey: 'cc2c5764d57b4feaafa0480d0c355653',
+  knowledgeBaseId: '',
+  subscriptionKey: '',
   top: 4
 });
 
